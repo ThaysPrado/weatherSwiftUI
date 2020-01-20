@@ -11,9 +11,9 @@ import SwiftUI
 struct DayCard: View {
     var body: some View {
         VStack {
-            Text("Dia")
-            Text("img")
-            Text("min/max")
+            Text("SEG")
+            Image("hc").resizable().frame(width: 50, height: 50)
+            Text("34º/17º")
         }
         .padding(20)
         .background(Rectangle().foregroundColor(.gray))

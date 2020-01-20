@@ -11,14 +11,29 @@ import SwiftUI
 struct WeatherCard: View {
     var body: some View {
         VStack {
-            Text("Segunda 20 Janeiro").font(.headline)
-            Text("23ºC").font(.system(size: 65))
-            Text("Nublado").font(.title)
             HStack {
-                Text("min")
-                Text("max")
-                Text("umidade")
+                Image("hc").resizable().frame(width: 50, height: 50)
+                Text("São Paulo, Brasil").font(.title)
             }
+            Spacer().frame(height: 40)
+            Text("28º").font(.system(size: 90))
+            Spacer().frame(height: 40)
+            HStack {
+                VStack {
+                    Text("minima")
+                    Text("23º")
+                }
+                Divider().frame(height: 50).padding()
+                 VStack {
+                   Text("maxima")
+                   Text("32º")
+               }
+                Divider().frame(height: 50).padding()
+                VStack {
+                   Text("umidade")
+                   Text("32%")
+               }
+            }.frame(height: 80)
         }
     }
 }

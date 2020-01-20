@@ -10,14 +10,28 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            WeatherCard()
-                .padding()
-            HStack {
-                DayCard()
-                DayCard()
-                DayCard()
+        NavigationView {
+            ScrollView {
+                VStack {
+                    WeatherCard().padding()
+                    ScrollView(.horizontal) {
+                        HStack {
+                            DayCard()
+                            DayCard()
+                            DayCard()
+                            DayCard()
+                            DayCard()
+                        }
+                    }.padding()
+                }
             }
+            .navigationBarItems(trailing:
+                Button(action: {
+                    print("Edit button pressed...")
+                }) {
+                    Text("Edit")
+                }
+            )
         }
     }
 }
