@@ -10,7 +10,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        VStack {
+            WeatherCard()
+                .padding()
+            HStack {
+                DayCard()
+                DayCard()
+                DayCard()
+            }
+        }
     }
 }
 
