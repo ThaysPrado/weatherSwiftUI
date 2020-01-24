@@ -13,7 +13,7 @@ struct WeatherCard: View {
         VStack {
             HStack {
                 Image("hc").resizable().frame(width: 50, height: 50)
-                Text("São Paulo, Brasil").font(.title)
+                Text("São Paulo").font(.title)
             }
             Spacer().frame(height: 40)
             Text("28º").font(.system(size: 90))

@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    var cities = ["São Paulo", "Rio de Janeiro", "Belo Horizonte"]
+    @State var settingsStore: SettingsStore
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -26,10 +29,8 @@ struct ContentView: View {
                 }
             }
             .navigationBarItems(trailing:
-                Button(action: {
-                    print("Edit button pressed...")
-                }) {
-                    Text("Edit")
+                NavigationLink(destination: SettingsView(settingsStore: SettingsStore())) {
+                    Image(systemName: "gear")
                 }
             )
         }
@@ -38,6 +39,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(settingsStore: SettingsStore())
     }
 }
+

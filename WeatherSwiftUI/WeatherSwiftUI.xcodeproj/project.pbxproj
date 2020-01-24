@@ -15,6 +15,8 @@
 		4011745A23D60DAD00A76EE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4011745823D60DAD00A76EE5 /* LaunchScreen.storyboard */; };
 		4011746223D613E800A76EE5 /* WeatherCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011746123D613E800A76EE5 /* WeatherCard.swift */; };
 		4011746423D6180800A76EE5 /* DayCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4011746323D6180800A76EE5 /* DayCard.swift */; };
+		404AD68923DA21D900185287 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404AD68823DA21D900185287 /* SettingsView.swift */; };
+		404AD68D23DA3B7B00185287 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404AD68C23DA3B7B00185287 /* SettingsStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		4011745B23D60DAD00A76EE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4011746123D613E800A76EE5 /* WeatherCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCard.swift; sourceTree = "<group>"; };
 		4011746323D6180800A76EE5 /* DayCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCard.swift; sourceTree = "<group>"; };
+		404AD68823DA21D900185287 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		404AD68C23DA3B7B00185287 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 				4011745123D60DAA00A76EE5 /* ContentView.swift */,
 				4011746123D613E800A76EE5 /* WeatherCard.swift */,
 				4011746323D6180800A76EE5 /* DayCard.swift */,
+				404AD68823DA21D900185287 /* SettingsView.swift */,
+				404AD68C23DA3B7B00185287 /* SettingsStore.swift */,
 				4011745323D60DAD00A76EE5 /* Assets.xcassets */,
 				4011745823D60DAD00A76EE5 /* LaunchScreen.storyboard */,
 				4011745B23D60DAD00A76EE5 /* Info.plist */,
@@ -155,6 +161,8 @@
 				4011744E23D60DAA00A76EE5 /* AppDelegate.swift in Sources */,
 				4011745023D60DAA00A76EE5 /* SceneDelegate.swift in Sources */,
 				4011746223D613E800A76EE5 /* WeatherCard.swift in Sources */,
+				404AD68D23DA3B7B00185287 /* SettingsStore.swift in Sources */,
+				404AD68923DA21D900185287 /* SettingsView.swift in Sources */,
 				4011746423D6180800A76EE5 /* DayCard.swift in Sources */,
 				4011745223D60DAA00A76EE5 /* ContentView.swift in Sources */,
 			);
