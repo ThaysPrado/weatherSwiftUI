@@ -9,11 +9,13 @@
 import SwiftUI
 
 struct DayCard: View {
+    @State var weather: Weather
+    
     var body: some View {
         VStack {
             Text("SEG")
             Image("hc").resizable().frame(width: 50, height: 50)
-            Text("34º/17º")
+            Text("\(weather.minTemp)º/\(weather.maxTemp)º")
         }
         .padding(20)
         .background(Rectangle().foregroundColor(.gray))
@@ -23,6 +25,6 @@ struct DayCard: View {
 
 struct DayCard_Previews: PreviewProvider {
     static var previews: some View {
-        DayCard()
+        DayCard(weather: Weather.getDefault())
     }
 }

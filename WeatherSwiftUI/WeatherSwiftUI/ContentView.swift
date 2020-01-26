@@ -11,21 +11,22 @@ import SwiftUI
 struct ContentView: View {
     var cities = ["São Paulo", "Rio de Janeiro", "Belo Horizonte"]
     @State var settingsStore: SettingsStore
+    @ObservedObject var contentVM: ContentViewModel
     
     var body: some View {
         NavigationView {
             ScrollView {
-                VStack {
-                    WeatherCard().padding()
-                    ScrollView(.horizontal) {
-                        HStack {
-                            DayCard()
-                            DayCard()
-                            DayCard()
-                            DayCard()
-                            DayCard()
-                        }
-                    }.padding()
+                if $contentVM.isVisible.wrappedValue {
+                    VStack {
+                        WeatherCard(weather: $contentVM.weatherList.wrappedValue.removeFirst()).padding()
+                        ScrollView(.horizontal) {
+                            HStack {
+                                ForEach($contentVM.weatherList.wrappedValue, id: \.self) { weather in
+                                    DayCard(weather: weather)
+                                }
+                            }
+                        }.padding()
+                    }
                 }
             }
             .navigationBarItems(trailing:
@@ -33,13 +34,17 @@ struct ContentView: View {
                     Image(systemName: "gear")
                 }
             )
-        }
+        }.onAppear(perform: fetch)
+    }
+    
+    private func fetch() {
+        contentVM.getWeather()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(settingsStore: SettingsStore())
+        ContentView(settingsStore: SettingsStore(), contentVM: ContentViewModel())
     }
 }
 

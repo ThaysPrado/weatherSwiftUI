@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct WeatherCard: View {
+    let weather: Weather
+    
     var body: some View {
         VStack {
             HStack {
@@ -16,22 +18,22 @@ struct WeatherCard: View {
                 Text("São Paulo").font(.title)
             }
             Spacer().frame(height: 40)
-            Text("28º").font(.system(size: 90))
+            Text(weather.theTemp).font(.system(size: 90))
             Spacer().frame(height: 40)
             HStack {
                 VStack {
                     Text("minima")
-                    Text("23º")
+                    Text(weather.minTemp)
                 }
                 Divider().frame(height: 50).padding()
                  VStack {
                    Text("maxima")
-                   Text("32º")
+                    Text(weather.maxTemp)
                }
                 Divider().frame(height: 50).padding()
                 VStack {
                    Text("umidade")
-                   Text("32%")
+                    Text(weather.humidity)
                }
             }.frame(height: 80)
         }
@@ -40,6 +42,6 @@ struct WeatherCard: View {
 
 struct WeatherCard_Previews: PreviewProvider {
     static var previews: some View {
-        WeatherCard()
+        WeatherCard(weather: Weather.getDefault())
     }
 }
