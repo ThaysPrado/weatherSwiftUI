@@ -10,7 +10,7 @@ import SwiftUI
 import Combine
 
 struct SettingsView: View {
-    var cities = ["São Paulo", "Rio de Janeiro", "Salvador"]
+    let cities = ["São Paulo", "Rio de Janeiro", "Salvador"]
     @ObservedObject var settingsStore: SettingsStore
     
     var body: some View {

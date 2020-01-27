@@ -29,8 +29,8 @@ struct ContentView: View {
                                 }
                             }.padding()
                             Spacer()
-                            NavigationLink(destination: SettingsView(settingsStore: SettingsStore())) {
-                                Text("Config")
+                            NavigationLink(destination: SettingsView(settingsStore: SettingsStore()).onDisappear(perform: fetch)) {
+                                Text("Change City")
                                 Image(systemName: "gear")
                             }
                         }
@@ -42,8 +42,7 @@ struct ContentView: View {
 //                    }
 //                )
             }
-        }
-        .onAppear(perform: fetch)
+        }.onAppear(perform: fetch)
     }
     
     private func fetch() {

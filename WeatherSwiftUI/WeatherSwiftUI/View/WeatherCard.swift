@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct WeatherCard: View {
-    let weather: Weather
+    @State var weather: Weather
     
     var body: some View {
         VStack {
