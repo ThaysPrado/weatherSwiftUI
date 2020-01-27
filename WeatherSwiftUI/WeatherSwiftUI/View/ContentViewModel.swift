@@ -23,7 +23,7 @@ class ContentViewModel: ObservableObject {
     }
     
     func getWeather() {
-        let params = ["location": "44418"]
+        let params = ["location": "455827"]
         weatherService.getWeatherAPI(
             parameters: params,
             onSuccess: {(response) in

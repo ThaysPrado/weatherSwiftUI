@@ -15,14 +15,14 @@ struct SettingsView: View {
     
     var body: some View {
         Form {
-            Section(header: Text("Settings")) {
+            Section(header: Text("Location")) {
                 Picker(selection: $settingsStore.city, label: Text("City")) {
                     ForEach(0..<cities.count) {
                         Text(self.cities[$0])
                     }
                 }
             }
-        }
+        }.navigationBarTitle("Settings")
     }
 }
 

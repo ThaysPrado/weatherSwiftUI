@@ -79,15 +79,10 @@
 		4011744C23D60DAA00A76EE5 /* WeatherSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				4032C52B23DE45C80027BBD5 /* MainDelegate */,
 				4032C52123DCEC4A0027BBD5 /* Model */,
 				4032C52223DCF2680027BBD5 /* API */,
-				4011744D23D60DAA00A76EE5 /* AppDelegate.swift */,
-				4011744F23D60DAA00A76EE5 /* SceneDelegate.swift */,
-				4032C52923DD16B50027BBD5 /* ContentViewModel.swift */,
-				4011745123D60DAA00A76EE5 /* ContentView.swift */,
-				4011746123D613E800A76EE5 /* WeatherCard.swift */,
-				4011746323D6180800A76EE5 /* DayCard.swift */,
-				404AD68823DA21D900185287 /* SettingsView.swift */,
+				4032C52C23DE45E60027BBD5 /* View */,
 				404AD68C23DA3B7B00185287 /* SettingsStore.swift */,
 				4011745323D60DAD00A76EE5 /* Assets.xcassets */,
 				4011745823D60DAD00A76EE5 /* LaunchScreen.storyboard */,
@@ -120,6 +115,27 @@
 				4032C52723DCF7A60027BBD5 /* WeatherService.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		4032C52B23DE45C80027BBD5 /* MainDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				4011744D23D60DAA00A76EE5 /* AppDelegate.swift */,
+				4011744F23D60DAA00A76EE5 /* SceneDelegate.swift */,
+			);
+			path = MainDelegate;
+			sourceTree = "<group>";
+		};
+		4032C52C23DE45E60027BBD5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4032C52923DD16B50027BBD5 /* ContentViewModel.swift */,
+				4011745123D60DAA00A76EE5 /* ContentView.swift */,
+				4011746123D613E800A76EE5 /* WeatherCard.swift */,
+				4011746323D6180800A76EE5 /* DayCard.swift */,
+				404AD68823DA21D900185287 /* SettingsView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		470D88814AC7704AF83AF11B /* Frameworks */ = {

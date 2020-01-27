@@ -14,26 +14,26 @@ struct WeatherCard: View {
     var body: some View {
         VStack {
             HStack {
-                Image("hc").resizable().frame(width: 50, height: 50)
+                Image(weather.weatherState).resizable().frame(width: 50, height: 50)
                 Text("São Paulo").font(.title)
             }
             Spacer().frame(height: 40)
-            Text(weather.theTemp).font(.system(size: 90))
+            Text("\(weather.theTemp)º").font(.system(size: 90))
             Spacer().frame(height: 40)
             HStack {
                 VStack {
-                    Text("minima")
-                    Text(weather.minTemp)
+                    Text("Minima")
+                    Text("\(weather.minTemp)º")
                 }
                 Divider().frame(height: 50).padding()
                  VStack {
-                   Text("maxima")
-                    Text(weather.maxTemp)
+                   Text("Maxima")
+                    Text("\(weather.maxTemp)º")
                }
                 Divider().frame(height: 50).padding()
                 VStack {
-                   Text("umidade")
-                    Text(weather.humidity)
+                   Text("Umidade")
+                    Text("\(weather.humidity)º")
                }
             }.frame(height: 80)
         }
