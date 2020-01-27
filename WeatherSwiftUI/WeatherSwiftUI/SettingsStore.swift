@@ -13,7 +13,7 @@ class SettingsStore: ObservableObject {
 
     let willChange = PassthroughSubject<Void, Never>()
 
-    var city: Int = UserDefaults.city {
+    var city: String = UserDefaults.city {
         willSet {
             UserDefaults.city = newValue
             willChange.send()
@@ -27,9 +27,9 @@ extension UserDefaults {
         static let city = "City"
     }
 
-    static var city: Int {
+    static var city: String {
         get {
-            return UserDefaults.standard.integer(forKey: Keys.city)
+            return UserDefaults.standard.string(forKey: Keys.city)!
         }
         set {
             UserDefaults.standard.set(newValue, forKey: Keys.city)

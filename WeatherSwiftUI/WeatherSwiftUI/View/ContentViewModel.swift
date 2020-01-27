@@ -23,7 +23,9 @@ class ContentViewModel: ObservableObject {
     }
     
     func getWeather() {
-        let params = ["location": "455827"]
+        let code = self.getLocationCode(city: UserDefaults.city)
+        let params = ["location": code]
+        
         weatherService.getWeatherAPI(
             parameters: params,
             onSuccess: {(response) in
@@ -33,5 +35,18 @@ class ContentViewModel: ObservableObject {
             onFailure: {(message) in
                 print("message \(message)")
             })
+    }
+    
+    private func getLocationCode(city: String) -> String {
+        switch city {
+        case "São Paulo":
+           return "455827"
+        case "Rio de Janeiro":
+           return "455825"
+        case "Salvador":
+            return "455826"
+        default:
+            return "455827"
+        }
     }
 }

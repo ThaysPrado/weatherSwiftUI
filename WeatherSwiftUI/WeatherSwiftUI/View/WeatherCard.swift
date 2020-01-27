@@ -15,7 +15,7 @@ struct WeatherCard: View {
         VStack {
             HStack {
                 Image(weather.weatherState).resizable().frame(width: 50, height: 50)
-                Text("São Paulo").font(.title)
+                Text(UserDefaults.city).font(.title)
             }
             Spacer().frame(height: 40)
             Text("\(weather.theTemp)º").font(.system(size: 90))
