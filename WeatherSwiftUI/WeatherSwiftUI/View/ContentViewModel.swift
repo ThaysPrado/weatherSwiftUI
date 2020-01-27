@@ -15,7 +15,7 @@ class ContentViewModel: ObservableObject {
     private var weatherService: WeatherService = WeatherService()
     
     @Published var isVisible: Bool = false
-
+    
     var weatherList: [Weather] = [Weather]() {
        willSet {
            willChange.send()
@@ -29,7 +29,7 @@ class ContentViewModel: ObservableObject {
         weatherService.getWeatherAPI(
             parameters: params,
             onSuccess: {(response) in
-                self.weatherList.append(contentsOf: response)
+                self.weatherList = response
                 self.isVisible = true
             },
             onFailure: {(message) in
