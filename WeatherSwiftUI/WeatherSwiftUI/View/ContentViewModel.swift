@@ -30,6 +30,7 @@ class ContentViewModel: ObservableObject {
             parameters: params,
             onSuccess: {(response) in
                 self.weatherList = response
+                print("Response \(response)")
                 self.isVisible = true
             },
             onFailure: {(message) in

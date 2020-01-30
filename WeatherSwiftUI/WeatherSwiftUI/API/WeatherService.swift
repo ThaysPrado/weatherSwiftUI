@@ -24,10 +24,10 @@ class WeatherService {
         
         APICallManager.shared.createRequest(
             url, method: .get, headers: nil, parameters: nil,
-            onSuccess: {(responseObject: [Any]) -> Void in
+            onSuccess: {(responseObject: JSON) -> Void in
                 var data = [Weather]()
-                if let response = responseObject as? [Weather] {
-                    data = response
+                if let weatherList = responseObject["consolidated_weather"].arrayObject as? [[String: Any]] {
+                    data = Weather.getModels(weatherList)
                 }
                 successCallback?(data)
             }, onFailure: {(errorMessage: String) -> Void in

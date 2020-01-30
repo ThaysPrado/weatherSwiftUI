@@ -11,8 +11,6 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var contentVM: ContentViewModel
     
-    let city = UserDefaults.city
-    
     var body: some View {
         NavigationView {
             ZStack {
@@ -36,11 +34,6 @@ struct ContentView: View {
                         }
                     }
                 }
-//                .navigationBarItems(trailing:
-//                    NavigationLink(destination: SettingsView(settingsStore: SettingsStore())) {
-//                        Image(systemName: "gear")
-//                    }
-//                )
             }
         }.onAppear(perform: fetch)
     }

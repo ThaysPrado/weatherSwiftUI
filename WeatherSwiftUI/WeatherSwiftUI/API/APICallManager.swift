@@ -19,18 +19,14 @@ class APICallManager {
         method: HTTPMethod,
         headers: [String: String]?,
         parameters: AnyObject?,
-        onSuccess successCallback: (([Any]) -> Void)?,
+        onSuccess successCallback: ((JSON) -> Void)?,
         onFailure failureCallback: ((String) -> Void)?
     ) {
         AF.request(url, method: method).validate().responseJSON { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                var data = [Weather]()
-                if let weatherList = json["consolidated_weather"].arrayObject as? [[String: Any]] {
-                    data = Weather.getModels(weatherList)
-                }
-                successCallback?(data)
+                successCallback?(json)
             case .failure(let error):
                 if let callback = failureCallback {
                     callback(error.localizedDescription)
