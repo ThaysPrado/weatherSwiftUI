@@ -1,6 +1,6 @@
 # WeatherAPP
 
-![ThaysPrado](https://i.imgur.com/dSZ1adJ.png)
+![ThaysPrado](https://i.imgur.com/dSZ1adJ.png | width=250)
 
 ##### Usage
 
