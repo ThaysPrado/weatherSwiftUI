@@ -17,9 +17,15 @@ struct WeatherCard: View {
                 Image(weather.weatherState).resizable().frame(width: 50, height: 50)
                 Text(UserDefaults.city).font(.title)
             }
+            
             Spacer().frame(height: 40)
-            Text("\(weather.theTemp)º").font(.system(size: 90))
+            
+            Text("\(weather.theTemp)º")
+                .font(.system(size: 90))
+                .accessibility(identifier: "Weather")
+            
             Spacer().frame(height: 40)
+            
             HStack {
                 VStack {
                     Text("Minima")
