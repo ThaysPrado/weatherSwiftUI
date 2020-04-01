@@ -22,7 +22,7 @@ struct WeatherCard: View {
             
             Text("\(weather.theTemp)º")
                 .font(.system(size: 90))
-                .accessibility(identifier: "Weather")
+                .accessibility(identifier: "weather")
             
             Spacer().frame(height: 40)
             

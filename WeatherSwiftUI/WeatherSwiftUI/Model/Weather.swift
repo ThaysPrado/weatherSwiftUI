@@ -44,4 +44,9 @@ struct Weather: Hashable {
         return Weather(json: data)
     }
     
+    func getDate() -> String {
+        let arrDate = strDate.split(separator: "-")
+        return "\(arrDate[2])/\(arrDate[1])"
+    }
+    
 }

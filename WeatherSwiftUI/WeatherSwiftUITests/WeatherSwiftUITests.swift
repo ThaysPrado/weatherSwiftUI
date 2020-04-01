@@ -42,5 +42,11 @@ class WeatherSwiftUITests: XCTestCase {
         
         XCTAssertEqual(arrModel, Weather.getModels(arr))
     }
+    
+    func testWeatheDate() {
+        let weather = Weather(json: data)
+        let date = "24/01"
+        XCTAssertEqual(date, weather.getDate())
+    }
 
 }

@@ -19,6 +19,7 @@ struct ContentView: View {
                     if $contentVM.isVisible.wrappedValue {
                         VStack {
                             WeatherCard(weather: $contentVM.weatherList.wrappedValue.removeFirst()).padding()
+                            
                             ScrollView(.horizontal) {
                                 HStack {
                                     ForEach($contentVM.weatherList.wrappedValue, id: \.self) { weather in
@@ -26,7 +27,9 @@ struct ContentView: View {
                                     }
                                 }
                             }.padding()
+                            
                             Spacer()
+                            
                             NavigationLink(destination: SettingsView(settingsStore: SettingsStore()).onDisappear(perform: fetch)) {
                                 Text("Change City")
                                 Image(systemName: "gear")

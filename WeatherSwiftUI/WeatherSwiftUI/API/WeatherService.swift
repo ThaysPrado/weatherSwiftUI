@@ -22,17 +22,27 @@ class WeatherService {
                                .replacingOccurrences(of: "{location}", with: parameters["location"]!)
         let url = apiBaseUrl + endPoint
         
-        APICallManager.shared.createRequest(
-            url, method: .get, headers: nil, parameters: nil,
-            onSuccess: {(responseObject: JSON) -> Void in
-                var data = [Weather]()
-                if let weatherList = responseObject["consolidated_weather"].arrayObject as? [[String: Any]] {
-                    data = Weather.getModels(weatherList)
-                }
-                successCallback?(data)
-            }, onFailure: {(errorMessage: String) -> Void in
-                failureCallback?(errorMessage)
-            })
+        #if TEST
+            let weather = Weather.getDefault()
+            let data = [weather]
+            successCallback?(data)
+        #else
+            APICallManager.shared.createRequest(
+                url, method: .get, headers: nil, parameters: nil,
+                onSuccess: {(responseObject: JSON) -> Void in
+                    var data = [Weather]()
+                    if let weatherList = responseObject["consolidated_weather"].arrayObject as? [[String: Any]] {
+                        data = Weather.getModels(weatherList)
+                    }
+                    successCallback?(data)
+                }, onFailure: {(errorMessage: String) -> Void in
+                    failureCallback?(errorMessage)
+                })
+        #endif
+    }
+    
+    public func mockWeatherAPI() {
+        
     }
     
 }

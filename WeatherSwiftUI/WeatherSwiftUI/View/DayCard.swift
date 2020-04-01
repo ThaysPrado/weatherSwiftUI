@@ -13,18 +13,13 @@ struct DayCard: View {
     
     var body: some View {
         VStack {
-            Text(self.getDate(strDate: weather.strDate))
+            Text(weather.getDate())
             Image(weather.weatherState).resizable().frame(width: 50, height: 50)
             Text("\(weather.minTemp)º/\(weather.maxTemp)º")
         }
         .padding(20)
         .background(Rectangle().foregroundColor(Color("cardColor")))
         .cornerRadius(10)
-    }
-    
-    private func getDate(strDate: String) -> String {
-        let arrDate = strDate.split(separator: "-")
-        return "\(arrDate[2])/\(arrDate[1])"
     }
 }
 

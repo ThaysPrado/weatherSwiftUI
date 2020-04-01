@@ -18,27 +18,14 @@ class WeatherSwiftUIUITests: XCTestCase {
     override func tearDown() {
         
     }
-
-    func testLaunchPerformance() {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            measure(metrics: [XCTOSSignpostMetric.applicationLaunch]) {
-                XCUIApplication().launch()
-            }
-        }
-    }
     
     func testWeatherHasValue() {
-        // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
         
-        let weatherDisplay = app.staticTexts["Weather"]
+        let weatherDisplay = app.staticTexts["weather"]
         let weatherText = weatherDisplay.label
-        
-        XCTAssert(weatherText != "")
-
+        XCTAssert(weatherText == "14.0º")
     }
-    
-    
 
 }
