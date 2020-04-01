@@ -44,5 +44,4 @@ struct Weather: Hashable {
         return Weather(json: data)
     }
     
-    
 }
