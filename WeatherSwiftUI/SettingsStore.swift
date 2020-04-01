@@ -29,7 +29,7 @@ extension UserDefaults {
 
     static var city: String {
         get {
-            return UserDefaults.standard.string(forKey: Keys.city)!
+            return UserDefaults.standard.string(forKey: Keys.city) ?? "São Paulo"
         }
         set {
             UserDefaults.standard.set(newValue, forKey: Keys.city)

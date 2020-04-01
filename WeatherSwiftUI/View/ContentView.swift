@@ -33,7 +33,9 @@ struct ContentView: View {
                             NavigationLink(destination: SettingsView(settingsStore: SettingsStore()).onDisappear(perform: fetch)) {
                                 Text("Change City")
                                 Image(systemName: "gear")
-                            }
+                            }.padding()
+                            
+                            Spacer()
                         }
                     }
                 }
